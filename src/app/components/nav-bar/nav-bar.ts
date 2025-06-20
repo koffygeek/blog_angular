@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -28,10 +30,13 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class NavBar {
-  authService: any;
-  router: any;
   get authenticated() {
     return this.authService.isAuthenticated();
+  }
+
+  constructor(public authService: AuthService, private router: Router) {
+    this.authService = authService;
+    this.router = router;
   }
 
   logout() {

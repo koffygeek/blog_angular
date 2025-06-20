@@ -35,8 +35,8 @@ export class NavBar {
   }
 
   constructor(public authService: AuthService, private router: Router) {
-    this.authService = authService;
-    this.router = router;
+    // this.authService = authService;
+    // this.router = router;
   }
 
   logout() {

@@ -16,8 +16,12 @@ export class AuthService {
     return true;
   }
 
-  logout() {
-    // Implement your logout logic, e.g., clear the token from local storage
-    localStorage.removeItem('token');
+  logout() {}
+  // Implement your logic to log out the user
+
+  login(username: string, password: string) {
+    return this.http.post<any>('asdf', {});
   }
+
+  saveToken(token: string) {}
 }

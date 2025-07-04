@@ -20,10 +20,10 @@ export class Register {
       this.authService.register(this.username, this.password).subscribe({
         next: () => {
           alert('Registration successful! Please log in.');
-          this.router.navigate(['/Login']);
+          this.router.navigate(['/login']);
         },
         error: (err) => {
-          console.error('Registration failed', err);
+          console.error('Registration failed.', err);
           alert(
             'Registration failed: ' + (err.error?.message || 'Unknown error')
           );

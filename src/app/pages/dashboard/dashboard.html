@@ -11,10 +11,29 @@
   <div class="mt-8p-4 border rounded p-4">
     <h3 class="text-lg font-bold mb-2">Add New Post</h3>
     <form #postForm="ngForm" (submit)="addPost(postForm)">
-      <input [(ngModel)]="newPost.title" name="title" placeholder="Title" required type="text"
-        class="block w-full mb-2 p-2 border">
-        <textarea [(ngModel)]="newPost.content" name="content"  placeholder="Content" rows="3" required class="block w-full mb-2 p-2 border"></textarea>
-        <button type="submit" [disabled]="postForm.invalid" class="bg-blue-500 text-white px-4 py-2 rounded">Create Post</button>
+      <input
+        [(ngModel)]="newPost.title"
+        name="title"
+        placeholder="Title"
+        required
+        type="text"
+        class="block w-full mb-2 p-2 border"
+      />
+      <textarea
+        [(ngModel)]="newPost.content"
+        name="content"
+        placeholder="Content"
+        rows="3"
+        required
+        class="block w-full mb-2 p-2 border"
+      ></textarea>
+      <button
+        type="submit"
+        [disabled]="postForm.invalid"
+        class="bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Create Post
+      </button>
     </form>
   </div>
 </div>

@@ -1,18 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
-import { AuthService } from '../../services/auth';
 import { Router } from '@angular/router';
+import { NgForm, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth';
 
 @Component({
   selector: 'app-login',
   imports: [FormsModule, CommonModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
+  providers: [AuthService],
 })
-export class Login {
-  username: string = '';
-  password: string = '';
+export class login {
+  username = '';
+  password = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -24,9 +25,8 @@ export class Login {
           this.router.navigate(['/dashboard']);
         },
         error: (err) => {
-          // Handle login error, e.g., show an error message
           console.error('Login failed: ', err);
-          alert('Login failed ' + err.error?.message || 'Check credentials');
+          alert('Login failed ' + err.error.error || 'Check credentials');
         },
       });
     }
